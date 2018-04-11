@@ -18,7 +18,7 @@ if [ -f $ENV_DIR/FRONTEND_PATH ]; then
 else
     BUILD_DIR=${1:-}
 fi
-echo 'BUILD_DIR is : $BUILD_DIR'
+echo "BUILD_DIR is : $BUILD_DIR"
 CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
