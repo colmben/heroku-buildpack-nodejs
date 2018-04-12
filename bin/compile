@@ -13,6 +13,8 @@ DEFAULT_CACHE="node_modules bower_components"
 BPLOG_PREFIX="buildpack.nodejs"
 
 ### Configure directories
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
 echo "ENV_DIR is $ENV_DIR"
 echo "List ENV_DIR is $(ls $ENV_DIR)"
 echo "Frontend Path is <$ENV_DIR/FRONTEND_PATH"
@@ -23,8 +25,6 @@ else
     BUILD_DIR=${1:-}
 fi
 echo "BUILD_DIR is : $BUILD_DIR"
-CACHE_DIR=${2:-}
-ENV_DIR=${3:-}
 BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 STDLIB_FILE=$(mktemp -t stdlib.XXXXX)
 
