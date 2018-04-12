@@ -17,10 +17,8 @@ CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 echo "ENV_DIR is $ENV_DIR"
 echo "List ENV_DIR is $(ls $ENV_DIR)"
-echo "Frontend Path is $(<$ENV_DIR/FRONTEND_PATH)"
-echo "Does it exist? $(-f $ENV_DIR/FRONTEND_PATH )"
 if [ -f $ENV_DIR/FRONTEND_PATH ]; then
-    BUILD_DIR=${1:-}$(<ENV_DIR/FRONTEND_PATH)
+    BUILD_DIR=${1:-}$(<$ENV_DIR/FRONTEND_PATH)
 else
     BUILD_DIR=${1:-}
 fi
