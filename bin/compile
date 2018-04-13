@@ -12,6 +12,7 @@ unset GIT_DIR     # Avoid GIT_DIR leak from previous build steps
 DEFAULT_CACHE="node_modules bower_components"
 BPLOG_PREFIX="buildpack.nodejs"
 
+echo "PATH is $PATH"
 ### Configure directories
 CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
