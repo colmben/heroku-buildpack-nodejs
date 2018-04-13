@@ -18,7 +18,8 @@ CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 if [ -f $ENV_DIR/FRONTEND_PATH ]; then
     BUILD_DIR=${1:-}$(<$ENV_DIR/FRONTEND_PATH)
-    export PATH = $PATH:$BUILD_DIR/.heroku/node/bin
+    PATH = $PATH:$BUILD_DIR/.heroku/node/bin
+    export PATH
 else
     BUILD_DIR=${1:-}
 fi
