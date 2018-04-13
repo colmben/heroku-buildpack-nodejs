@@ -18,13 +18,14 @@ CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 if [ -f $ENV_DIR/FRONTEND_PATH ]; then
     BUILD_DIR=${1:-}$(<$ENV_DIR/FRONTEND_PATH)
+    export PATH = $PATH:$BUILD_DIR/.heroku/node/bin
 else
     BUILD_DIR=${1:-}
 fi
 echo "BUILD_DIR is : $BUILD_DIR"
 BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 STDLIB_FILE=$(mktemp -t stdlib.XXXXX)
-
+echo "PATH is $PATH"
 ### Load dependencies
 
 curl --silent --retry 5 --retry-max-time 15 'https://lang-common.s3.amazonaws.com/buildpack-stdlib/v7/stdlib.sh' > "$STDLIB_FILE"
