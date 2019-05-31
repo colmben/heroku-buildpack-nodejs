@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
-
+echo $ENV_DIR
+echo $1
 if ([ -f $ENV_DIR/FRONTEND_PATH ] && [ -f $1<$ENV_DIR/FRONTEND_PATH/package.json ]) || [ -f $1/package.json ] ; then
   echo 'Node.js'
   exit 0
