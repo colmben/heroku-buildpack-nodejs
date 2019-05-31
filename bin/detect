@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
-echo $ENV_DIR
-echo $1
+
 echo "Before ${1}"
-echo "After $(ENV_DIR}"
+echo "After ${ENV_DIR}"
 
 for entry in "$ENV_DIR"/*
 do
