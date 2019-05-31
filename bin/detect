@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
-echo "Before ${1}"
-echo "After ${ENV_DIR}"
+echo " ${1}"
+echo " ${ENV_DIR}"
+# originally the code below checked if package.json existed, but actually it looks like ENV_DIR
+# isn't (and maybe never was?) passed to this detect script so lets just exit with OK
 exit 0
-for entry in "$ENV_DIR"/*
-do
-  echo "$entry"
-done
+
 
 if ([ -f $ENV_DIR/FRONTEND_PATH ] && [ -f $1<$ENV_DIR/FRONTEND_PATH/package.json ]) || [ -f $1/package.json ] ; then
   echo 'Node.js'
