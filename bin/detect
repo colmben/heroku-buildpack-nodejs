@@ -6,5 +6,5 @@ if ([ -f $ENV_DIR/FRONTEND_PATH ] && [ -f $1<$ENV_DIR/FRONTEND_PATH/package.json
   exit 0
 fi
 
->&2 echo 'Colm Node.js: package.json not found in application root'
+>&2 echo $ENV_DIR + 'Colm  Node.js: package.json not found in application root'
 exit 1
