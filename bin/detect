@@ -3,7 +3,7 @@
 
 echo "Before ${1}"
 echo "After ${ENV_DIR}"
-
+exit 0
 for entry in "$ENV_DIR"/*
 do
   echo "$entry"
